@@ -6,13 +6,13 @@
   <title>PLANdeC</title>
 
   <style>
- :root{
-    --bg:#0f0f10;
-    --card:#161618;
-    --text:#ffffff;
-    --muted:rgba(255,255,255,.72);
-    --border:rgba(255,255,255,.12);
-    --accent:#5A2D82;
+    :root{
+      --bg:#0f0f10;
+      --card:#161618;
+      --text:#ffffff;
+      --muted:rgba(255,255,255,.72);
+      --border:rgba(255,255,255,.12);
+      --accent:#5A2D82;
     }
 
     *{box-sizing:border-box}
@@ -23,7 +23,7 @@
       color:var(--text);
     }
 
-    .wrap{max-width:1100px; margin:0 auto; padding:18px 18px 60px;}
+    .wrap{max-width:1100px; margin:0 auto; padding:18px 18px 70px;}
 
     /* Top bar */
     .top{
@@ -40,7 +40,13 @@
       text-decoration:none;
       color:var(--text);
     }
-    .brand img{height:34px; width:auto; display:block}
+    .logoTop{
+      height:42px;
+      width:auto;
+      display:block;
+      object-fit:contain;
+    }
+
     .nav{
       display:flex;
       gap:18px;
@@ -51,8 +57,13 @@
       text-decoration:none;
       padding:8px 10px;
       border-radius:10px;
+      border:1px solid transparent;
     }
-    .nav a:hover{background:rgba(90,45,130,.18); color:var(--text); border:1px solid rgba(90,45,130,.35);}
+    .nav a:hover{
+      background:rgba(90,45,130,.18);
+      color:var(--text);
+      border:1px solid rgba(90,45,130,.35);
+    }
 
     /* Hero */
     .hero{
@@ -94,14 +105,43 @@
       font-size:14px;
     }
     .btnPrimary{
-       filter:brightness(1.08);
+      background:var(--accent);
+      color:#ffffff;
+      border-color:var(--accent);
     }
     .btnGhost{
-     border-color:rgba(90,45,130,.6);
-  background:rgba(90,45,130,.12);
+      background:transparent;
+      color:var(--text);
+    }
+    .btnPrimary:hover{filter:brightness(1.08);}
+    .btnGhost:hover{
+      border-color:rgba(90,45,130,.6);
+      background:rgba(90,45,130,.12);
     }
 
-    /* Small note */
+    /* Services */
+    .section{
+      margin-top:60px;
+      text-align:center;
+    }
+    .cards{
+      display:flex;
+      gap:20px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+    .card{
+      background:var(--card);
+      padding:25px;
+      border-radius:15px;
+      width:280px;
+      border:1px solid rgba(255,255,255,.1);
+      text-align:left;
+    }
+    .card h3{margin:0 0 10px;}
+    .card p{margin:0; font-size:15px; color:var(--muted);}
+
     .note{
       margin-top:14px;
       font-size:12px;
@@ -112,6 +152,7 @@
       h1{font-size:34px}
       p{font-size:16px}
       .nav{display:none;}
+      .card{text-align:center;}
     }
   </style>
 </head>
@@ -121,17 +162,17 @@
 
     <div class="top">
       <a class="brand" href="#">
-        <img src="logo333.png" alt="PLANdeC" />
+        <img class="logoTop" src="logo333.png" alt="PLANdeC" />
       </a>
 
       <div class="nav">
-        <a href="#">Inicio</a>
-        <a href="#">Servicios</a>
-        <a href="#">Contacto</a>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
       </div>
     </div>
 
-    <section class="hero">
+    <section class="hero" id="inicio">
       <img class="heroLogo" src="logo333.png" alt="PLANdeC" />
       <h1>Estrategia, ejecución y resultados</h1>
       <p>
@@ -146,54 +187,32 @@
       <div class="note">Sitio en construcción · Próximamente más secciones</div>
     </section>
 
+    <section class="section" id="servicios">
+      <h2 style="font-size:36px;">Nuestros Servicios</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Planificación Estratégica</h3>
+          <p>Diseñamos planes claros orientados a resultados medibles y crecimiento sostenible.</p>
+        </div>
+
+        <div class="card">
+          <h3>Gestión de Proyectos</h3>
+          <p>Convertimos ideas en ejecución eficiente mediante metodologías modernas.</p>
+        </div>
+
+        <div class="card">
+          <h3>Consultoría Empresarial</h3>
+          <p>Optimizamos procesos y decisiones estratégicas para maximizar resultados.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <h2 style="font-size:36px;">Contacto</h2>
+      <p>Escríbenos a <b>contacto@plandec.com</b> o usa el botón de asesoría.</p>
+    </section>
+
   </div>
 </body>
 </html>
-<section style="margin-top:60px; text-align:center;">
-
-<h2 style="font-size:36px;">Nuestros Servicios</h2>
-
-<div style="
-display:flex;
-gap:20px;
-justify-content:center;
-flex-wrap:wrap;
-margin-top:30px;
-">
-
-<div style="
-background:#161618;
-padding:25px;
-border-radius:15px;
-width:280px;
-border:1px solid rgba(255,255,255,.1);
-">
-<h3>Planificación Estratégica</h3>
-<p>Diseñamos planes claros orientados a resultados medibles y crecimiento sostenible.</p>
-</div>
-
-<div style="
-background:#161618;
-padding:25px;
-border-radius:15px;
-width:280px;
-border:1px solid rgba(255,255,255,.1);
-">
-<h3>Gestión de Proyectos</h3>
-<p>Convertimos ideas en ejecución eficiente mediante metodologías modernas.</p>
-</div>
-
-<div style="
-background:#161618;
-padding:25px;
-border-radius:15px;
-width:280px;
-border:1px solid rgba(255,255,255,.1);
-">
-<h3>Consultoría Empresarial</h3>
-<p>Optimizamos procesos y decisiones estratégicas para maximizar resultados.</p>
-</div>
-
-</div>
-
-</section>
