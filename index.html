@@ -6,506 +6,385 @@
   <title>PLANdeC</title>
 
   <style>
-    
-  .sectionTitle{
-  font-size:36px;
-  margin:0;
-  text-align:center;
-    }
     :root{
-     --bg:#ffffff;
-  --card:#ffffff;
-  --text:#141418;
-  --muted:rgba(20,20,24,.70);
-  --border:rgba(90,45,130,.20);
-  --accent:#5A2D82;
-  --shadow:0 14px 34px rgba(16,16,24,.10);
-    }
-html{
-  scroll-behavior:smooth;
-  scroll-padding-top:110px;
-}
-    *{box-sizing:border-box}
-    body{
-   margin:0;
-  font-family: Arial, Helvetica, sans-serif;
-  background:
-    radial-gradient(900px 500px at 15% 10%, rgba(90,45,130,.12), transparent 60%),
-    radial-gradient(900px 500px at 85% 15%, rgba(90,45,130,.10), transparent 60%),
-    #ffffff;
-  color:var(--text);
+      --bg:#ffffff;
+      --card:#ffffff;
+      --text:#141418;
+      --muted:rgba(20,20,24,.70);
+      --border:rgba(90,45,130,.20);
+      --accent:#5A2D82;
+      --shadow:0 14px 34px rgba(16,16,24,.10);
     }
 
-    .wrap{
-  width:100%;
-  padding:0;
+    html{ scroll-behavior:smooth; scroll-padding-top:110px; }
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(90,45,130,.12), transparent 60%),
+        radial-gradient(900px 500px at 85% 15%, rgba(90,45,130,.10), transparent 60%),
+        var(--bg);
+      color:var(--text);
+    }
+
+    .wrap{ width:100%; padding:0; }
+
+    .sectionTitle{
+      font-size:36px;
+      margin:0 0 18px;
+      text-align:center;
     }
 
     /* Top bar */
     .top{
- width:100%;
-  background:#5A2D82;
-  padding:18px 40px;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  position:sticky;
-  top:0;
-  z-index:1000;
+      width:100%;
+      background:var(--accent);
+      padding:16px 40px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      position:sticky;
+      top:0;
+      z-index:1000;
     }
+
     .brand{
       display:flex;
       align-items:center;
       gap:12px;
       text-decoration:none;
-      color:var(--text);
     }
-   .logoTop{
-  height:52px;
-  filter:brightness(0) invert(1);
-}
+
+    .logoTop{
+      height:56px;
+      width:auto;
+      display:block;
+      filter:brightness(0) invert(1); /* logo blanco */
     }
+
     .nav{
       display:flex;
       gap:18px;
       font-size:14px;
     }
-   .nav a{
-  color:white;
+
+    .nav a{
+      color:#fff;
+      text-decoration:none;
+      padding:8px 10px;
+      border-radius:10px;
+      border:1px solid transparent;
     }
+
     .nav a:hover{
       background:rgba(255,255,255,.14);
-  border-color:rgba(255,255,255,.22);
-  color:#fff;
+      border-color:rgba(255,255,255,.22);
     }
-   
+
+    @media (max-width:640px){
+      .top{ padding:14px 18px; }
+      .nav{ display:none; }
+      .logoTop{ height:48px; }
+    }
+
     /* Hero */
-.hero{
-  width:100%;
-  min-height:90vh;
+    .hero{
+      width:100%;
+      min-height:88vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:60px 18px;
 
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
+      position:relative;
+      overflow:hidden;
 
-  position:relative;
-
-  background:
-  linear-gradient(
-    rgba(15,15,16,.65),
-    rgba(15,15,16,.85)
-  ),
-  url("hero.png");
-
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-}
-
-/* Oscurece imagen para leer texto */
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    180deg,
-    rgba(10,10,12,.45),
-    rgba(10,10,12,.80)
-  );
-}
-
-/* contenido encima */
-.hero > *{
-  position:relative;
-  z-index:1;
-}
-
-.heroLogo{
-  width:420px;
-  max-width:92%;
-  height:auto;
-  margin-bottom:10px;
-  filter:drop-shadow(0 12px 20px rgba(0,0,0,.6));
-}
-
-.hero h1{
-  margin:10px 0;
-  font-size:44px;
-  color:#ffffff;
-}
-
-.hero p{
-  max-width:720px;
-  font-size:18px;
-  color:rgba(255,255,255,.85);
-}
-
-/* BOTONES */
-.actions{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  padding:12px 18px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:700;
-  font-size:14px;
-  border:1px solid rgba(255,255,255,.2);
-}
-
-.btnPrimary{
-  background:linear-gradient(135deg,#5A2D82,#7a3ab3);
-  color:#fff;
-  border:none;
-}
-
-.btnPrimary:hover{
-  filter:brightness(1.1);
-}
-
-.btnGhost{
-  background:transparent;
-  color:#fff;
-}
-
-.btnGhost:hover{
-  background:rgba(90,45,130,.18);
-  border-color:rgba(90,45,130,.6);
-}
-  margin-top:18px;
-  border-radius:18px;
-  padding:120px 22px;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-
-  background:
-  linear-gradient(
-    rgba(15,15,16,.75),
-    rgba(15,15,16,.85)
-  ),
-  url("hero.png");
-
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-
-  border:1px solid rgba(90,45,130,.35);
-}
-      margin-top:18px;
-  background:#ffffff;
-  border:2px solid rgba(90,45,130,.28);
-  border-radius:22px;
-  padding:50px 22px;
-  text-align:center;
-  box-shadow:var(--shadow);
+      background:
+        linear-gradient(rgba(10,10,12,.55), rgba(10,10,12,.82)),
+        url("hero.png");
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
     }
+
+    .heroInner{
+      width:100%;
+      max-width:1100px;
+      margin:0 auto;
+    }
+
     .heroLogo{
-      width:520px;
+      width:360px;
       max-width:92%;
       height:auto;
       display:block;
       margin:0 auto 18px;
-    }
-    h1{
-      margin:10px 0 10px;
-      font-size:44px;
-      letter-spacing:.2px;
-    }
-    p{
-      margin:0 auto 22px;
-      max-width:720px;
-      font-size:18px;
-      line-height:1.55;
-      color:var(--muted);
+      filter:drop-shadow(0 14px 26px rgba(0,0,0,.55));
     }
 
-    .actions{display:flex; justify-content:center; gap:12px; flex-wrap:wrap;}
+    .hero h1{
+      margin:0 0 12px;
+      font-size:46px;
+      color:#fff;
+      letter-spacing:.2px;
+    }
+
+    .hero p{
+      margin:0 auto 22px;
+      max-width:760px;
+      font-size:18px;
+      line-height:1.55;
+      color:rgba(255,255,255,.88);
+    }
+
+    .actions{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+
     .btn{
       display:inline-block;
-      padding:12px 16px;
+      padding:12px 18px;
       border-radius:12px;
-      border:1px solid var(--border);
       text-decoration:none;
       font-weight:700;
       font-size:14px;
+      border:1px solid rgba(255,255,255,.22);
+      color:#fff;
     }
+
     .btnPrimary{
-      .btnPrimary{
-  background:linear-gradient(135deg, #5A2D82, #7a3ab3);
-  color:#ffffff;
-  border-color:transparent;
+      background:linear-gradient(135deg,#5A2D82,#7a3ab3);
+      border:none;
     }
+
+    .btnPrimary:hover{ filter:brightness(1.08); }
+
     .btnGhost{
       background:transparent;
-      color:var(--text);
     }
-    .btnPrimary:hover{filter:brightness(1.08);}
+
     .btnGhost:hover{
-      border-color:rgba(90,45,130,.6);
-      background:rgba(90,45,130,.12);
+      background:rgba(90,45,130,.18);
+      border-color:rgba(90,45,130,.55);
     }
 
-    /* Services */
+    /* Mensaje grande */
+    .construction{
+      margin-top:26px;
+      font-size:42px;
+      line-height:1.15;
+      font-weight:800;
+      color:#fff;
+      text-shadow:0 10px 30px rgba(0,0,0,.55);
+    }
+
+    @media (max-width:720px){
+      .hero h1{ font-size:34px; }
+      .hero p{ font-size:16px; }
+      .construction{ font-size:30px; }
+      .heroLogo{ width:300px; }
+    }
+
+    /* Secciones */
     .section{
-      margin-top:60px;
-      text-align:center;
-    }
-  .cards{
- display:grid;
-  grid-template-columns:repeat(3, minmax(0, 1fr));
-  gap:24px;
-  margin-top:30px;
-}
-
-@media (max-width:980px){
-  .cards{ grid-template-columns:1fr; }
-}
-
-.card{
- background:#ffffff;
-  padding:25px;
-  border-radius:18px;
-  border:1.5px solid rgba(90,45,130,.22);
-  text-align:left;
-  box-shadow:0 10px 22px rgba(16,16,24,.06);
-}
-    .card h3{margin:0 0 10px;}
-    .card p{margin:0; font-size:15px; color:var(--muted);}
-
-    .note{
-      margin-top:14px;
-      font-size:12px;
-      color:rgba(255,255,255,.55);
+      width:100%;
+      max-width:1100px;
+      margin:0 auto;
+      padding:64px 18px;
     }
 
-    @media (max-width:520px){
-      h1{font-size:34px}
-      p{font-size:16px}
-      .nav{display:none;}
-      .card{text-align:center;}
+    /* About */
+    .about{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:22px;
+      margin-top:18px;
     }
-  .about{
-  margin-top:26px;
-  display:grid;
-  grid-template-columns:repeat(2, minmax(0, 1fr));
-  gap:24px;
-}
 
-.aboutCard{
-   background:#ffffff;
-  border:1.5px solid rgba(90,45,130,.22);
-  border-radius:18px;
-  padding:22px;
-  text-align:left;
-  box-shadow:0 10px 22px rgba(16,16,24,.06);
-}
+    .aboutCard{
+      background:var(--card);
+      border:2px solid rgba(90,45,130,.22);
+      border-radius:18px;
+      padding:22px;
+      text-align:left;
+      box-shadow:0 10px 22px rgba(16,16,24,.06);
+    }
 
-.aboutCard h3{
-  margin:0 0 10px;
-  font-size:18px;
-}
+    .aboutCard h3{
+      margin:0 0 10px;
+      font-size:18px;
+    }
 
-.aboutCard p{
-  margin:0 0 12px;
-  font-size:15px;
-  color:var(--muted);
-  line-height:1.65;
-}
+    .aboutCard p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:15px;
+    }
 
-@media (max-width:980px){
-  .about{ grid-template-columns:1fr; }
-}
+    @media (max-width:980px){
+      .about{ grid-template-columns:1fr; }
+    }
 
-  /* About (Quienes somos / Como trabajamos) */
-.about{
-  width:100%;
-  max-width:1100px;
-  margin:40px auto 0;
-  padding:0 18px;
+    /* Services cards */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:24px;
+      margin-top:22px;
+    }
 
-  display:grid;
-  grid-template-columns:repeat(2, minmax(0, 1fr));
-  gap:22px;
-}
+    .card{
+      background:var(--card);
+      padding:25px;
+      border-radius:18px;
+      border:2px solid rgba(90,45,130,.22);
+      text-align:left;
+      box-shadow:0 10px 22px rgba(16,16,24,.06);
+    }
 
-.aboutCard{
-  background:#ffffff;
-  border:2px solid rgba(90,45,130,.22);
-  border-radius:18px;
-  padding:22px;
-  text-align:left;
+    .card h3{ margin:0 0 10px; }
+    .card p{ margin:0; font-size:15px; color:var(--muted); line-height:1.6; }
 
-  box-shadow: 0 18px 45px rgba(0,0,0,.10);
-}
+    @media (max-width:980px){
+      .cards{ grid-template-columns:1fr; }
+      .card{ text-align:left; }
+    }
 
-.aboutCard h3{
-  margin:0 0 10px;
-  font-size:18px;
-  color:#0f0f10;
-}
+    /* WhatsApp floating button */
+    .whatsappFloat{
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      width:60px;
+      height:60px;
+      background:#25D366;
+      color:white;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      text-decoration:none;
+      box-shadow:0 6px 18px rgba(0,0,0,.4);
+      z-index:999;
+      transition:.25s;
+    }
 
-.aboutCard p{
-  margin:0;
-  color:#2b2b2b;
-  line-height:1.65;
-  font-size:15px;
-}
-
-@media (max-width:980px){
-  .about{ grid-template-columns:1fr; }
-}    
-      
-</style>
-  
+    .whatsappFloat:hover{ transform:scale(1.08); }
+  </style>
 </head>
 
 <body>
   <div class="wrap">
 
-    <div class="top">
-      <a class="brand" href="#">
+    <header class="top">
+      <a class="brand" href="#inicio">
         <img class="logoTop" src="logo333.png" alt="PLANdeC" />
       </a>
 
-      <div class="nav">
+      <nav class="nav">
         <a href="#inicio">Inicio</a>
+        <a href="#quienes">Quiénes somos</a>
         <a href="#servicios">Servicios</a>
         <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+      <div class="heroInner">
+        <img class="heroLogo" src="logo333.png" alt="PLANdeC" />
+
+        <h1>Estrategia política, ejecución y posicionamiento</h1>
+        <p>
+          PLANdeC acompaña procesos preelectorales y electorales en Colombia, diseñando
+          estrategias de campaña, comunicación política y relaciones públicas orientadas a
+          resultados reales y sostenibles.
+        </p>
+
+        <div class="actions">
+          <a class="btn btnPrimary" href="mailto:meulenbeekw@gmail.com">Solicitar asesoría</a>
+          <a class="btn btnGhost" href="#contacto">Ver contacto</a>
+        </div>
+
+        <div class="construction">Sitio en construcción · Próximamente más secciones</div>
       </div>
-    </div>
-
-  <section class="section" id="quienes">
-  <h2 style="font-size:36px; text-align:center;">Quiénes somos</h2>
-
-  <div class="about">
-    <div class="aboutCard">
-      <h3>Quiénes somos</h3>
-      <p>
-        Somos una firma colombiana enfocada en estrategia política, comunicación y relaciones públicas.
-        Acompañamos campañas y equipos de gobierno desde la fase preelectoral hasta la etapa electoral,
-        con foco en claridad estratégica, disciplina de ejecución y posicionamiento público.
-      </p>
-    </div>
-
-    <div class="aboutCard">
-      <h3>Cómo trabajamos</h3>
-      <p>
-        Partimos de un diagnóstico rápido del escenario: electorado, percepción, riesgos, oportunidades y capacidad operativa.
-        Definimos prioridades, mensajes clave, plan de comunicación y plan de relacionamiento.
-        Ejecutamos con seguimiento semanal, ajustes por datos y soporte directo al equipo.
-      </p>
-    </div>
-  </div>
-
-      <h1>Sitio en construcción · Próximamente más secciones</h1>
     </section>
 
-    <section class="section" id="nosotros">
-  <h2 class="sectionTitle">Quiénes somos</h2>
+    <section class="section" id="quienes">
+      <h2 class="sectionTitle">Quiénes somos</h2>
 
-  <div class="about">
-    <div class="aboutCard">
-      <h3>PLANdeC</h3>
-      <p>
-        Somos una firma colombiana enfocada en estrategia política, comunicación y relaciones públicas.
-        Acompañamos campañas y equipos de gobierno desde la fase preelectoral hasta la etapa electoral,
-        con foco en claridad estratégica, disciplina de ejecución y posicionamiento público.
-      </p>
-      <p>
-        Integramos análisis, narrativa, gestión de agenda y coordinación territorial para convertir objetivos
-        políticos en resultados medibles, cuidando reputación, coherencia del mensaje y confianza ciudadana.
-      </p>
-    </div>
+      <div class="about">
+        <div class="aboutCard">
+          <h3>PLANdeC</h3>
+          <p>
+            Somos una firma colombiana enfocada en estrategia política, comunicación y relaciones públicas.
+            Acompañamos campañas y equipos de gobierno desde la fase preelectoral hasta la etapa electoral,
+            con foco en claridad estratégica, disciplina de ejecución y posicionamiento público.
+          </p>
+        </div>
 
-    <div class="aboutCard">
-      <h3>Cómo trabajamos</h3>
-      <p>
-        Partimos de un diagnóstico rápido del escenario: electorado, percepción, riesgos, oportunidades y
-        capacidad operativa. A partir de ahí definimos una hoja de ruta con prioridades, mensajes clave,
-        plan de comunicación y plan de relacionamiento.
-      </p>
-      <p>
-        Ejecutamos con método: seguimiento semanal, ajustes por datos y soporte directo al equipo.
-        Menos ruido, más estrategia. Menos improvisación, más control.
-      </p>
-    </div>
-  </div>
-</section>
-    
-   <section class="section" id="servicios">
-  <h2 class="sectionTitle">Nuestros Servicios</h2>
+        <div class="aboutCard">
+          <h3>Cómo trabajamos</h3>
+          <p>
+            Partimos de un diagnóstico rápido del escenario: electorado, percepción, riesgos y oportunidades.
+            Definimos prioridades, mensajes clave, plan de comunicación y plan de relacionamiento.
+            Ejecutamos con seguimiento semanal, ajustes por datos y soporte directo al equipo.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <div class="cards">
-    <div class="card">
-      <h3>Estrategia de Campaña</h3>
-      <p>
-        Diseñamos estrategias políticas integrales para procesos preelectorales y electorales,
-        alineando mensaje, narrativa y posicionamiento del candidato.
-      </p>
-    </div>
+    <section class="section" id="servicios">
+      <h2 class="sectionTitle">Nuestros Servicios</h2>
 
-    <div class="card">
-      <h3>Comunicación y Opinión Pública</h3>
-      <p>
-        Gestionamos comunicación estratégica, reputación y relacionamiento con medios,
-        fortaleciendo la percepción pública y el liderazgo político.
-      </p>
-    </div>
+      <div class="cards">
+        <div class="card">
+          <h3>Estrategia de Campaña</h3>
+          <p>
+            Diseñamos estrategias políticas integrales para procesos preelectorales y electorales,
+            alineando mensaje, narrativa y posicionamiento del candidato.
+          </p>
+        </div>
 
-    <div class="card">
-      <h3>Relaciones Públicas y Territorio</h3>
-      <p>
-        Construimos conexiones institucionales y territororiales que consolidan apoyo, visibilidad
-        y gobernabilidad durante y después de la campaña.
-      </p>
-    </div>
-  </div>
-</section>
+        <div class="card">
+          <h3>Comunicación y Opinión Pública</h3>
+          <p>
+            Gestionamos comunicación estratégica, reputación y relacionamiento con medios,
+            fortaleciendo la percepción pública y el liderazgo político.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Relaciones Públicas y Territorio</h3>
+          <p>
+            Construimos conexiones institucionales y territoriales que consolidan apoyo, visibilidad
+            y gobernabilidad durante y después de la campaña.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="contacto">
-      <h2 style="font-size:36px;">Contacto</h2>
-      <p>Escríbenos a <b>meulenbeekw@gmail.com</b> o usa el botón de asesoría.</p>
-       <p>Telefono:<b> +31642740647</b> </p>
+      <h2 class="sectionTitle">Contacto</h2>
+      <p style="text-align:center; color:var(--muted); margin:0;">
+        Escríbenos a <b style="color:var(--text)">meulenbeekw@gmail.com</b> o usa el botón de asesoría.
+        <br />
+        Teléfono: <b style="color:var(--text)">+31642740647</b>
+      </p>
     </section>
 
   </div>
-  <a href="https://wa.me/+31642740647" 
-   class="whatsappFloat" 
-   target="_blank">
-   💬
-</a>
 
-<style>
-.whatsappFloat{
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  width:60px;
-  height:60px;
-  background:#25D366;
-  color:white;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:28px;
-  text-decoration:none;
-  box-shadow:0 6px 18px rgba(0,0,0,.4);
-  z-index:999;
-  transition:.3s;
-}
-
-.whatsappFloat:hover{
-  transform:scale(1.1);
-}
-</style>
+  <a href="https://wa.me/31642740647" class="whatsappFloat" target="_blank" aria-label="WhatsApp">
+    💬
+  </a>
 </body>
 </html>
