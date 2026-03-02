@@ -40,7 +40,7 @@ html{
 
     /* Top bar */
     .top{
-       position:sticky;
+  position:sticky;
   top:0;
   z-index:1000;
 
@@ -49,11 +49,11 @@ html{
   justify-content:space-between;
   gap:16px;
 
-  padding:14px 0 14px;
+  padding:14px 18px;
 
-  background:rgba(255,255,255,.78);
-  backdrop-filter: blur(10px);
-  border-bottom:1px solid rgba(90,45,130,.18);
+  background:var(--accent); /* #5A2D82 */
+  border-radius:18px;
+  box-shadow:0 10px 26px rgba(90,45,130,.25);
     }
     .brand{
       display:flex;
@@ -75,16 +75,16 @@ html{
       font-size:14px;
     }
     .nav a{
-      color:var(--muted);
-      text-decoration:none;
-      padding:8px 10px;
-      border-radius:10px;
-      border:1px solid transparent;
+    color:rgba(255,255,255,.90);
+  text-decoration:none;
+  padding:8px 10px;
+  border-radius:10px;
+  border:1px solid transparent;
     }
     .nav a:hover{
-      background:rgba(90,45,130,.18);
-      color:var(--text);
-      border:1px solid rgba(90,45,130,.35);
+      background:rgba(255,255,255,.14);
+  border-color:rgba(255,255,255,.22);
+  color:#fff;
     }
    
     /* Hero */
