@@ -166,7 +166,38 @@ html{
       .nav{display:none;}
       .card{text-align:center;}
     }
-  </style>
+  .about{
+  margin-top:26px;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:24px;
+}
+
+.aboutCard{
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,0));
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px;
+  text-align:left;
+}
+
+.aboutCard h3{
+  margin:0 0 10px;
+  font-size:18px;
+}
+
+.aboutCard p{
+  margin:0 0 12px;
+  font-size:15px;
+  color:var(--muted);
+  line-height:1.65;
+}
+
+@media (max-width:980px){
+  .about{ grid-template-columns:1fr; }
+}
+</style>
+  
 </head>
 
 <body>
