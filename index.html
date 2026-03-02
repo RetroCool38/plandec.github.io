@@ -13,12 +13,13 @@
   text-align:center;
     }
     :root{
-      --bg:#0f0f10;
-      --card:#161618;
-      --text:#ffffff;
-      --muted:rgba(255,255,255,.72);
-      --border:rgba(255,255,255,.12);
-      --accent:#5A2D82;
+     --bg:#ffffff;
+  --card:#ffffff;
+  --text:#141418;
+  --muted:rgba(20,20,24,.70);
+  --border:rgba(90,45,130,.20);
+  --accent:#5A2D82;
+  --shadow:0 14px 34px rgba(16,16,24,.10);
     }
 html{
   scroll-behavior:smooth;
@@ -26,21 +27,33 @@ html{
 }
     *{box-sizing:border-box}
     body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:var(--bg);
-      color:var(--text);
+   margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(900px 500px at 15% 10%, rgba(90,45,130,.12), transparent 60%),
+    radial-gradient(900px 500px at 85% 15%, rgba(90,45,130,.10), transparent 60%),
+    #ffffff;
+  color:var(--text);
     }
 
     .wrap{max-width:1100px; margin:0 auto; padding:18px 18px 70px;}
 
     /* Top bar */
     .top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding:16px 0 10px;
+       position:sticky;
+  top:0;
+  z-index:1000;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+
+  padding:14px 0 14px;
+
+  background:rgba(255,255,255,.78);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid rgba(90,45,130,.18);
     }
     .brand{
       display:flex;
@@ -77,11 +90,12 @@ html{
     /* Hero */
     .hero{
       margin-top:18px;
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:46px 22px;
-      text-align:center;
+  background:#ffffff;
+  border:2px solid rgba(90,45,130,.28);
+  border-radius:22px;
+  padding:50px 22px;
+  text-align:center;
+  box-shadow:var(--shadow);
     }
     .heroLogo{
       width:520px;
@@ -114,9 +128,10 @@ html{
       font-size:14px;
     }
     .btnPrimary{
-      background:var(--accent);
-      color:#ffffff;
-      border-color:var(--accent);
+      .btnPrimary{
+  background:linear-gradient(135deg, #5A2D82, #7a3ab3);
+  color:#ffffff;
+  border-color:transparent;
     }
     .btnGhost{
       background:transparent;
@@ -145,11 +160,12 @@ html{
 }
 
 .card{
-  background:var(--card);
+ background:#ffffff;
   padding:25px;
-  border-radius:15px;
-  border:1px solid rgba(255,255,255,.1);
+  border-radius:18px;
+  border:1.5px solid rgba(90,45,130,.22);
   text-align:left;
+  box-shadow:0 10px 22px rgba(16,16,24,.06);
 }
     .card h3{margin:0 0 10px;}
     .card p{margin:0; font-size:15px; color:var(--muted);}
@@ -174,11 +190,12 @@ html{
 }
 
 .aboutCard{
-  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,0));
-  border:1px solid var(--border);
+   background:#ffffff;
+  border:1.5px solid rgba(90,45,130,.22);
   border-radius:18px;
   padding:22px;
   text-align:left;
+  box-shadow:0 10px 22px rgba(16,16,24,.06);
 }
 
 .aboutCard h3{
