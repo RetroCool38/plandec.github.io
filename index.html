@@ -304,6 +304,18 @@ transition:.3s;
 
     .whatsappFloat:hover{ transform:scale(1.08); }
 
+.whatsappLine{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:6px;
+}
+
+.whatsappIcon{
+  width:22px;
+  height:22px;
+}
+    
 /* CONTACTO MEJORADO */
 
 .contactGrid{
@@ -524,7 +536,12 @@ transition:.3s;
       <h3>Conversemos</h3>
       <p>
         Escríbenos a <a class="contactLink" href="mailto:meulenbeekw@gmail.com">meulenbeekw@gmail.com</a><br/>
-        Teléfono / WhatsApp: <a class="contactLink" href="https://wa.me/31642740647" target="_blank">+31642740647</a>
+        <div class="whatsappLine">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsappIcon">
+  <a class="contactLink" href="https://wa.me/31642740647" target="_blank">
+    +31642740647
+  </a>
+</div>
       </p>
 
       <div class="contactActions">
