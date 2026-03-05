@@ -432,7 +432,26 @@ transition:.3s;
     text-align:center;
   }
 }
+.whatsappLine{
+display:flex;
+align-items:center;
+gap:10px;
+margin-top:6px;
+}
 
+.whatsappLink{
+display:flex;
+align-items:center;
+gap:8px;
+text-decoration:none;
+font-weight:700;
+color:var(--accent);
+}
+
+.whatsappIcon{
+width:20px;
+height:20px;
+}
 </style>
 </head>
 
@@ -533,13 +552,46 @@ transition:.3s;
   <div class="contactGrid">
 
     <div class="contactCard">
-      <h3>Conversemos</h3>
-      <p>
-        Escríbenos a <a class="contactLink" href="mailto:meulenbeekw@gmail.com">meulenbeekw@gmail.com</a><br/>
-        <div class="whatsappLine">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsappIcon">
-  <a class="contactLink" href="https://wa.me/31642740647" target="_blank">
+      Perfecto, entiendo lo que quieres ahora 👍
+Quieres 3 cosas al mismo tiempo en el cuadro de contacto:
+
+Mantener el texto Teléfono / WhatsApp
+
+Que aparezca el logo de WhatsApp
+
+Que al hacer clic abra el chat de WhatsApp
+
+Recuperar el botón de WhatsApp al lado de "Enviar correo"
+
+Vamos a dejarlo exactamente así.
+
+1️⃣ Cambia el HTML del contacto
+
+Busca esta parte dentro de tu tarjeta Conversemos y reemplázala por esto:
+
+<p>
+  Escríbenos a 
+  <a class="contactLink" href="mailto:meulenbeekw@gmail.com">
+  meulenbeekw@gmail.com
+  </a>
+</p>
+
+<p class="whatsappLine">
+  Teléfono / WhatsApp
+
+  <a class="whatsappLink" href="https://wa.me/31642740647" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsappIcon">
     +31642740647
+  </a>
+</p>
+
+<div class="contactActions">
+  <a class="btn btnPrimary" href="mailto:meulenbeekw@gmail.com">
+    Enviar correo
+  </a>
+
+  <a class="btn btnGhost" href="https://wa.me/31642740647" target="_blank">
+    WhatsApp
   </a>
 </div>
       </p>
