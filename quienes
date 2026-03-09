@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiénes somos | PLANdeC</title>
+
+  <style>
+    :root{
+      --accent:#5A2D82;
+      --bg:#ffffff;
+      --text:#141418;
+      --muted:rgba(20,20,24,.72);
+      --border:rgba(90,45,130,.22);
+      --shadow:0 14px 34px rgba(16,16,24,.10);
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(90,45,130,.12), transparent 60%),
+        radial-gradient(900px 500px at 85% 15%, rgba(90,45,130,.10), transparent 60%),
+        var(--bg);
+      color:var(--text);
+    }
+
+    .top{
+      width:100%;
+      background:var(--accent);
+      padding:16px 40px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+    }
+
+    .logoTop{
+      height:56px;
+      width:auto;
+      display:block;
+      filter:brightness(0) invert(1);
+    }
+
+    .nav{
+      display:flex;
+      gap:18px;
+      font-size:14px;
+    }
+
+    .nav a{
+      color:#fff;
+      text-decoration:none;
+      padding:8px 10px;
+      border-radius:10px;
+      border:1px solid transparent;
+    }
+
+    .nav a:hover{
+      background:rgba(255,255,255,.14);
+      border-color:rgba(255,255,255,.22);
+    }
+
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:40px 18px 70px;
+    }
+
+    .hero{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .hero h1{
+      font-size:46px;
+      margin:0 0 16px;
+    }
+
+    .hero p{
+      max-width:850px;
+      margin:0 auto;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.7;
+    }
+
+    .section{
+      margin-top:50px;
+    }
+
+    .section h2{
+      font-size:34px;
+      margin:0 0 18px;
+      text-align:center;
+    }
+
+    .card{
+      background:#fff;
+      border:2px solid var(--border);
+      border-radius:18px;
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.75;
+      font-size:16px;
+    }
+
+    .values{
+      display:grid;
+      grid-template-columns:repeat(5, minmax(0,1fr));
+      gap:18px;
+      margin-top:22px;
+    }
+
+    .valueBox{
+      background:#fff;
+      border:2px solid var(--border);
+      border-radius:18px;
+      padding:20px;
+      text-align:center;
+      box-shadow:var(--shadow);
+    }
+
+    .valueBox h3{
+      margin:0 0 10px;
+      font-size:18px;
+      color:var(--accent);
+    }
+
+    .valueBox p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .teamIntro{
+      max-width:850px;
+      margin:0 auto 25px;
+      text-align:center;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:16px;
+    }
+
+    .teamGrid{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:22px;
+      margin-top:30px;
+    }
+
+    .teamCard{
+      background:#fff;
+      border:2px solid var(--border);
+      border-radius:18px;
+      padding:20px;
+      text-align:center;
+      box-shadow:var(--shadow);
+      text-decoration:none;
+      color:inherit;
+      transition:.25s;
+    }
+
+    .teamCard:hover{
+      transform:translateY(-6px);
+      border-color:var(--accent);
+    }
+
+    .teamCard img{
+      width:140px;
+      height:140px;
+      object-fit:cover;
+      border-radius:50%;
+      display:block;
+      margin:0 auto 16px;
+      border:4px solid rgba(90,45,130,.15);
+    }
+
+    .teamCard h3{
+      margin:0 0 8px;
+      font-size:20px;
+    }
+
+    .teamCard h4{
+      margin:0 0 10px;
+      font-size:14px;
+      color:var(--accent);
+      font-weight:700;
+    }
+
+    .teamCard p{
+      margin:0;
+      font-size:14px;
+      line-height:1.6;
+      color:var(--muted);
+    }
+
+    @media (max-width:980px){
+      .values{grid-template-columns:repeat(2, minmax(0,1fr));}
+      .teamGrid{grid-template-columns:repeat(2, minmax(0,1fr));}
+    }
+
+    @media (max-width:640px){
+      .top{padding:14px 18px;}
+      .nav{display:none;}
+      .hero h1{font-size:34px;}
+      .hero p{font-size:16px;}
+      .values{grid-template-columns:1fr;}
+      .teamGrid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="top">
+    <a class="brand" href="/index.html#inicio">
+      <img class="logoTop" src="logo333.png" alt="PLANdeC" />
+    </a>
+
+    <nav class="nav">
+      <a href="/index.html#inicio">Inicio</a>
+      <a href="/quienes.html">Quiénes somos</a>
+      <a href="/servicios.html">Servicios</a>
+      <a href="/index.html#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+
+    <section class="hero">
+      <h1>Quiénes somos</h1>
+      <p>
+        PLANdeC es una firma enfocada en estrategia política, comunicación pública y relaciones institucionales.
+        Acompañamos campañas electorales, proyectos políticos y equipos de liderazgo en el diseño de estrategias
+        que conectan con la ciudadanía y generan resultados reales.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Nuestra visión</h2>
+      <div class="card">
+        <p>
+          Consolidarnos como una firma de referencia en estrategia política y comunicación pública en América Latina,
+          apoyando líderes, campañas y organizaciones en la construcción de proyectos políticos con impacto real en la sociedad.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Nuestros valores</h2>
+      <div class="values">
+        <div class="valueBox">
+          <h3>Estrategia</h3>
+          <p>Cada decisión se apoya en análisis, planificación y objetivos claros.</p>
+        </div>
+
+        <div class="valueBox">
+          <h3>Confianza</h3>
+          <p>Trabajamos con integridad, compromiso y responsabilidad profesional.</p>
+        </div>
+
+        <div class="valueBox">
+          <h3>Disciplina</h3>
+          <p>Las campañas exitosas requieren organización, control y ejecución constante.</p>
+        </div>
+
+        <div class="valueBox">
+          <h3>Innovación</h3>
+          <p>Integramos herramientas digitales, análisis de datos y nuevas metodologías.</p>
+        </div>
+
+        <div class="valueBox">
+          <h3>Impacto</h3>
+          <p>Buscamos transformar estrategia en resultados concretos y sostenibles.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Nuestra contribución</h2>
+      <div class="card">
+        <p>
+          En PLANdeC ayudamos a transformar ideas políticas en proyectos viables y competitivos. Acompañamos procesos
+          electorales, posicionamiento de liderazgo, estrategias de comunicación pública y fortalecimiento institucional.
+          Nuestro enfoque combina análisis estratégico, narrativa política y gestión territorial para construir campañas
+          coherentes, creíbles y con capacidad de movilización ciudadana.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Nuestro equipo</h2>
+      <p class="teamIntro">
+        PLANdeC reúne profesionales en estrategia política, comunicación pública, diseño y tecnología
+        que trabajan de forma coordinada para desarrollar campañas y proyectos políticos con visión estratégica.
+      </p>
+
+      <div class="teamGrid">
+        <a class="teamCard" href="/wolfgang.html">
+          <img src="wolfgang.jpg" alt="Wolfgang Melenses">
+          <h3>Wolfgang Melenses</h3>
+          <h4>Estrategia Política</h4>
+          <p>Politólogo y magíster en marketing y comunicación política con experiencia en campañas y entidades gubernamentales.</p>
+        </a>
+
+        <a class="teamCard" href="/lucy.html">
+          <img src="lucy.jpg" alt="Lucy Garces">
+          <h3>Lucy Garces</h3>
+          <h4>Comunicación y Medios</h4>
+          <p>Periodista y magíster en marketing y comunicación política con experiencia en medios y entidades gubernamentales.</p>
+        </a>
+
+        <a class="teamCard" href="/andres.html">
+          <img src="andres.jpg" alt="Andrés Arias">
+          <h3>Andrés Arias</h3>
+          <h4>Diseño UX/UI</h4>
+          <p>Especialista en experiencia de usuario e interfaces digitales para proyectos políticos y comunicación estratégica.</p>
+        </a>
+
+        <a class="teamCard" href="/manuel.html">
+          <img src="manuel.jpg" alt="Manuel J Páez">
+          <h3>Manuel J Páez</h3>
+          <h4>Estrategia Digital y Tecnología</h4>
+          <p>Enfocado en soluciones digitales, automatización, desarrollo web y fortalecimiento tecnológico de proyectos políticos.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
